@@ -6,15 +6,29 @@
     <title>Sample</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
 <body>
-    <div ng-app="">
-        <p>Input something in the box:</p>
+    <div ng-app="myApp" /*ng-init="quantity=2;cost=5"*/ /*ng-init="person={fname:'monica',lname:'dinglasa'}"*/
+    /*ng-init="points=[1,2,3,4,5,6,7,8]"*/ ng-controller="myCtrl">
+    {{fname + " " +lname}}
+        <!-- <p>Input something in the box:</p>
         <p>Name: <input type="text" ng-model="name" placeholder="enter name"></p>
         <p>Age: <input type="number" ng-model="age" placeholder="enter age"></p>
         <h1>Hello I am {{name + ", " +age + " "}} years old </h1>
+
+        <p>Total peso:<span ng-bind = "quantity * cost "></p>
+        <p>The lastname is {{person.lname}}</p>  
+        <p>The fourth result is {{points[3]}}</p>   -->
+        
     </div>
-   
+    <script>
+            var app = angular.module("myApp",[]);
+            app.controller("myCtrl",function($scope){
+                $scope.fname="monica";
+                $scope.lname="dinglasa";
+            });
+
+        </script>
 </body>
 </html>
